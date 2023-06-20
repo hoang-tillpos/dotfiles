@@ -1,37 +1,51 @@
-#upgrade the lot :-)
-sudo pacman -Syu
+sudo pacman -Syyu
 
-#bluetooth
-sudo pacman -S bluez bluez-utils blueman
-sudo pacman -S mesa glmark2
+sudo pacman -S git firefox rustup go python nix direnv fish docker btop libreoffice-fresh
 
-#browsers
-sudo pacman -S firefox
-yay -S google-chrome
+mkdir i
+cd i
+
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+cd ..
 
 
-#code, rust
-sudo pacman -S rustup
+# git clone https://aur.archlinux.org/yay.git
+# cd yay
+# makepkg -si
+# cd ..
+
+
+
+#browsers + api
+# sudo pacman -S firefox
+paru -S google-chrome
+paru -S postman 
+
+#code, rust, etc.
+# sudo pacman -S rustup
 rustup install stable
 rustup default stable
 
 
-sudo pacman -S go
+# sudo pacman -S go
 
-sudo pacman -S python
+# sudo pacman -S python
 python -m ensurepip --upgrade
 
-sudo pacman -S btop
+# sudo pacman -S btop
 
-	
-sudo pacman -S docker
+
+#code env	
+# sudo pacman -S docker
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
 sudo usermod -aG docker $USER
 
-yay -S visual-studio-code-bin
-yay -S git
-yay -S github-cli
-yay -S aws-cli-git
+paru -S visual-studio-code-bin github-cli aws-cli-git 
+paru -S nix
 
 
+#out of /i
+cd ..
