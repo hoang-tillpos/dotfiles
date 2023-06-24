@@ -2,7 +2,7 @@
 paru -S stow i3 i3ipc-glib-git xfce4-i3-workspaces-plugin-git \
         nitrogen drun rofi
 
-stow i3
+stow --no-folding i3 -t ~/.config/i3
 
 #kill xfcewm4 and xfdesktop using graphical interface]
 #add i3-workspaces-plugin to the panel items

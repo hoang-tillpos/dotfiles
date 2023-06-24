@@ -1,15 +1,14 @@
 sudo pacman -Syyu
 
 sudo pacman -S git base-devel opera rustup go python nix \
-        direnv fish docker btop libreoffice-fresh cpupower \
-        stow
+        direnv fish docker btop libreoffice-fresh cpupower 
 
 cpupower frequency-set -g performance
 systemctl enable cpupower.service
 #systemctl disable cpupower.service
 
-mkdir .i
-cd .i
+mkdir i
+cd i
 
 git clone https://aur.archlinux.org/paru.git
 cd paru
@@ -40,8 +39,10 @@ sudo systemctl start docker.service
 sudo systemctl enable docker.service
 sudo usermod -aG docker $USER
 
-paru -S visual-studio-code-bin github-cli aws-cli-git fish
+paru -S visual-studio-code-bin github-cli aws-cli-git fish stow
+
+stow bash
 
 
-#out of /.i
+#out of /i
 cd ..
