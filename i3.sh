@@ -1,5 +1,6 @@
 #i3 wm and nitrogen 
-paru -S stow i3 i3ipc-glib-git xfce4-i3-workspaces-plugin-git nitrogen
+paru -S stow i3 i3ipc-glib-git xfce4-i3-workspaces-plugin-git \
+        nitrogen drun rofi
 
 stow i3
 

@@ -1,6 +1,12 @@
 sudo pacman -Syyu
 
-sudo pacman -S git base-devel opera rustup go python nix direnv fish docker btop libreoffice-fresh
+sudo pacman -S git base-devel opera rustup go python nix \
+        direnv fish docker btop libreoffice-fresh cpupower \
+        stow
+
+cpupower frequency-set -g performance
+systemctl enable cpupower.service
+#systemctl disable cpupower.service
 
 mkdir .i
 cd .i
@@ -35,7 +41,6 @@ sudo systemctl enable docker.service
 sudo usermod -aG docker $USER
 
 paru -S visual-studio-code-bin github-cli aws-cli-git fish
-paru -S nix
 
 
 #out of /.i
